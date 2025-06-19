@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium hair care and beauty services in Port Harcourt. Book appointments for styling, makeup, and wig sales.">
+  <meta property="og:title" content="Oma's Hair Studio" />
+  <meta property="og:description" content="Confident Hair Starts Here – Premium Hair Care for Every Texture" />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <title>Oma's Beauty & Hair Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css" />
+  <script src="https://kit.fontawesome.com/a2d9d5b8b0.js" crossorigin="anonymous"></script>
+
+  <!-- Swiper CSS CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      /* padding-top: 100px; */
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Preloader */
+    /* #preloader {
+      background-color: #6a0dad;
+      color: #fff;
+      font-size: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    #preloader span {
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      display: inline-block;
+      animation: typing 4s steps(24, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 37ch; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease;
+    }
+
+    body:not(.loaded) main,
+    body:not(.loaded) header,
+    body:not(.loaded) section,
+    body:not(.loaded) footer {
+      display: none;
+    } */
+
+    header {
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+      background-color: #6a0dad;
+    }
+
+   header .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      max-width: 150px;
+      width: 40vw;
+      height: auto;
+      z-index: 10;
+      /* background-color: red; */
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      margin: 0 0 10px;
+      /* animation: fadeIn 2s ease-in-out; */
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: slideIn 5s ease-in-out infinite alternate;
+    }
+/* 
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    } */
+
+    @keyframes slideIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      50% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(20px); opacity: 0; }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #6a0dad;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Services Styling */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .services div {
+      padding: 20px;
+      background: #f9f5ff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(106, 13, 173, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .services div:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(106, 13, 173, 0.3);
+      background: #e7d7ff;
+    }
+
+    .services i {
+      margin-bottom: 15px;
+      color: #6a0dad;
+      font-size: 3rem;
+    }
+
+    .services p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0;
+      color: #4a0080;
+    }
+
+    /* Swiper Product Slider */
+    .swiper {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(106 13 173 / 0.3);
+      background: white;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    /* Default color of arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+    color: whitesmoke; 
+    filter: drop-shadow(0 0 2px rgba(106, 13, 173, 0.8));
+    font-size: 10px;
+    width: 30px;         /* Adjust width */
+    height: 30px; 
+    transform: scale(0.6);
+  }
+
+ 
+    /* Show more removed because slider now */
+
+    form {
+      background: #f2f2f2;
+      padding: 30px;
+      border-radius: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    form input,
+    form select,
+    form textarea,
+    form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #6a0dad;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #6a0dad;
+      color: #fff;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: center;
+    }
+
+    .footer-contact,
+    .footer-center,
+    .footer-socials {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .popup.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      #preloader span {
+        font-size: 1.1rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header .logo {
+        width: 100px;
+        max-width: none;
+        top: 4px;
+        left: 10px;
+        /* font-size: 70rem; */
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-contact,
+      .footer-center,
+      .footer-socials {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <div id="preloader"><span>"LIFE IS TOO SHORT TO KEEP A BORING HAIR"</span></div> -->
+
+ <header>
+    <div class="logo-container">
+      <img src="images/Black Gold Simple Body and Hair Treatment Logo.png" alt="Hair Brand Logo" draggable="false" class="logo" />
+    </div>
+    <h1>OMA'S BEAUTY & HAIR STUDIO</h1>
+    <p>YOUR HAIR IS MY REPONSIBILITY, ALLOW ME HANDLE IT </p>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+      At Oma's Beauty & Hair Studio, we believe great hair starts with great care. Our
+      services are designed to restore, nourish, and style with
+      purpose. Whether you’re caring for curls, building strength, or looking
+      for flawless styling, we’re here to help you thrive.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div><i class="fas fa-user-alt"></i><p>Braiding</p></div>
+      <div><i class="fas fa-magic"></i><p>Makeup</p></div>
+      <div><i class="fas fa-paint-brush"></i><p>Styling</p></div>
+      <div><i class="fas fa-store"></i><p>Hair Sales</p></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title">Style Gallery</h2>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          <!-- Makeups Images -->
+        <div class="swiper-slide">
+          <img src="images/makeup1.jpg" alt="Nourishing Shampoo" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup2.jpg" alt="Repair Conditioner" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup3.jpg" alt="Hair Elixir" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup4.jpg" alt="Hydrating Mask" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup5.jpg" alt="Hydrating Mask" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup6.jpg" alt="Hydrating Mask" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/makeup7.jpg" alt="Hydrating Mask" />
+        </div>
+          <!-- Wigs Images -->
+        <div class="swiper-slide">
+          <img src="images/wig1.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig2.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig3.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig4.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig5.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig6.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig7.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig8.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig9.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig10.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig11.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig12.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig13.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig14.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/wig15.jpg" alt="Hair Serum" />
+        </div>
+          <!-- Styles Images -->
+        <div class="swiper-slide">
+          <img src="images/style1.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/style2.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/style3.jpg" alt="Hair Serum" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/style4.jpg" alt="Hair Serum" />
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Book An Appointment</h2>
+    <form action=https://formspree.io/f/myzjgvkv method="POST" onsubmit="showPopup(event)">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="location" placeholder="Location" required />
+      <select name="service" required>
+        <!-- <option value="">Select a Service</option> -->
+        <option value="Braiding">Braiding</option>
+        <option value="Styling">Styling</option>
+        <option value="Hair Sales">Buy a wig</option>
+        <option value="Makeup">Makeup</option>
+      </select>
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+      <textarea name="message" placeholder="Your message to us (optional)" rows="4"></textarea>
+      <button type="submit">Book Appointment</button>
+    </form>
+  </section>
+
+  <div class="popup" id="popup">
+    <h3>Thank you for booking!</h3>
+    <p>We have received your appointment request and will contact you shortly.</p>
+  </div>
+
+  <footer>
+    <div class="footer-contact">
+      <p><strong>Contact Us</strong></p>
+      <p>📍 Porthacourt, Nigeria</p>
+      <p>📞 (+234) 8102968799</p>
+      <p>✉️ bomaalaminiokuma@gmail.com</p>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2025 Oma's Hair Studio</p>
+      <p><a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms & Conditions</a></p>
+    </div>
+    <div class="footer-socials">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1CQXEDi6KR/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/omas_beautyhairstudio/profilecard" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@omas_beautyhairstudio" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/message/4TXAVDRUK3MWH1"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script>
+    function showPopup(event) {
+      event.preventDefault();
+      const form = event.target;
+      const popup = document.getElementById('popup');
+      popup.classList.add('show');
+      setTimeout(() => {
+        popup.classList.remove('show');
+        form.submit();
+      }, 3000);
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+      }, 4200);
+    });
+
+    // Initialize Swiper slider
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
